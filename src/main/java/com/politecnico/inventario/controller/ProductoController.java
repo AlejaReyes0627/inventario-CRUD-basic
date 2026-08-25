@@ -2,7 +2,6 @@ package com.politecnico.inventario.controller;
 
 import com.politecnico.inventario.model.entity.Producto;
 import com.politecnico.inventario.service.ProductoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,7 +21,6 @@ public class ProductoController {
 
     private final ProductoService productoService;
 
-    @Autowired
     public ProductoController(ProductoService productoService) {
         this.productoService = productoService;
     }

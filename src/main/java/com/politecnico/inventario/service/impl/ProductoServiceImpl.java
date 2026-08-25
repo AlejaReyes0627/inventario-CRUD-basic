@@ -4,7 +4,6 @@ import com.politecnico.inventario.exception.ResourceNotFoundException;
 import com.politecnico.inventario.model.entity.Producto;
 import com.politecnico.inventario.repository.ProductoRepository;
 import com.politecnico.inventario.service.ProductoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +13,6 @@ public class ProductoServiceImpl implements ProductoService {
 
     private final ProductoRepository productoRepository;
 
-    @Autowired
     public ProductoServiceImpl(ProductoRepository productoRepository) {
         this.productoRepository = productoRepository;
     }
