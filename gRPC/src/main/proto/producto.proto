@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.politecnico.inventario.grpc";
+option java_outer_classname = "ProductoProto";
+
+package producto;
+
+message Producto {
+  int64 id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+  double precio = 4;
+}
+
+message CrearProductoRequest {
+  string nombre = 1;
+  string descripcion = 2;
+  double precio = 3;
+}
+
+message ActualizarProductoRequest {
+  int64 id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+  double precio = 4;
+}
+
+message IdRequest {
+  int64 id = 1;
+}
+
+message Empty {}
+
+message ListaProductos {
+  repeated Producto productos = 1;
+}
+
+message EliminarResponse {
+  bool eliminado = 1;
+  string mensaje = 2;
+}
+
+service ProductoService {
+  rpc ListarTodos (Empty) returns (ListaProductos);
+  rpc ObtenerPorId (IdRequest) returns (Producto);
+  rpc CrearProducto (CrearProductoRequest) returns (Producto);
+  rpc ActualizarProducto (ActualizarProductoRequest) returns (Producto);
+  rpc EliminarProducto (IdRequest) returns (EliminarResponse);
+}

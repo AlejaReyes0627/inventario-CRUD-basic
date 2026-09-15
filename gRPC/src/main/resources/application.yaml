@@ -1,0 +1,22 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /inventario-grpc
+
+spring:
+  datasource:
+    url: jdbc:postgresql://aws-0-us-east-2.pooler.supabase.com:6543/postgres?sslmode=require
+    username: postgres.dwiadfpoekrtxvdmcvhy
+    password: Y29udHJhc2XDsWE=
+    driver-class-name: org.postgresql.Driver
+  graphql:
+    graphiql:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true 
